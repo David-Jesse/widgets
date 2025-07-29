@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from 'tailwindcss/vite'
+import tailwindcss from '@tailwindcss/vite'
 import crypto from 'crypto'
 
 // Polyfill for crypto.hash which is expected by Vite but not available in Node.js v20

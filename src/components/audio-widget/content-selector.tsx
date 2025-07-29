@@ -1,8 +1,8 @@
 import {motion} from "framer-motion";
-import {RefObject} from "react";
+import {type RefObject} from "react";
 
 interface ContentSelectorProps {
-    tabContainerRef: RefObject<HTMLDivElement>;
+    tabsContainerRef: RefObject<HTMLDivElement>;
     tabRefs: RefObject<Record<string, HTMLHeadingElement | null>>
     tabOptions: string[];
     selectedTab: string;
@@ -14,7 +14,7 @@ interface ContentSelectorProps {
 const speedOptions = ["1x", "1.25x", "1.5x", "2x"];
 
 export const ContentSelectors = ({
-                                     tabContainerRef,
+                                     tabsContainerRef,
                                      tabRefs,
                                      tabOptions,
                                      selectedTab,
@@ -45,7 +45,7 @@ export const ContentSelectors = ({
             className={'mt-4 flex h-full w-full flex-col items-center justify-start text-[#515151]'}
         >
             <div
-                ref={tabContainerRef}
+                ref={tabsContainerRef}
                 className={'scrollbar-hide w-full overflow-x-auto px-48'}
                 style={{
                     scrollbarWidth: "none",
