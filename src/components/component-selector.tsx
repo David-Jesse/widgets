@@ -10,7 +10,7 @@ type ComponentOption = {
 const options: ComponentOption[] = [
     {id: "memory-widget", label: "Memory Widget"},
     {id: "audio-widget", label: "Audio Widget"},
-    {id: "fixed-nav", label: "Fixed Nav"},
+    {id: "fixed-nav", label: "Fixed Navbar"},
     {id: 'floating-nav', label: "Floating Nav"},
     {id: "figma-toolbar", label: "Figma Toolbar"},
 ]
@@ -72,7 +72,7 @@ export default function ComponentSelector({activeComponent, onChange}: Component
                                     }`}
                                     transition={{duration: 0.1}}
                                 >
-                                    {options.label}
+                                    {option.label}
                                     {activeComponent === option.id && (
                                         <Check className={'h-4 w-4 text-gray-800'}/>
                                     )}
@@ -85,7 +85,7 @@ export default function ComponentSelector({activeComponent, onChange}: Component
 
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className={'flex min-w-[180px] items-center justify-between rounded-xl bg-[#1c1d1f] px-4 text-[15px] font-medium leading-[20px] tracking-[-0.1px] text-[#f3f4f6]'}
+                className={'flex min-w-[180px] items-center justify-between rounded-xl bg-[#1c1d1f] px-4 py-2 text-[15px] font-medium leading-[20px] tracking-[-0.1px] text-[#f3f4f6]'}
                 layout
                 whileHover={{scale: 1.02}}
                 whileTap={{scale: 0.98}}

@@ -2,7 +2,7 @@ import {useState} from "react";
 import {motion} from 'framer-motion';
 import cursor from "../../assets/figma-toolbar/cursor.svg";
 import comment from "../../assets/figma-toolbar/comment.svg";
-import measure from "../../assets/figma-toolbar/mesure.svg";
+import measure from "../../assets/figma-toolbar/measure.svg";
 import annotate from "../../assets/figma-toolbar/annotate.svg";
 
 const ToolbarDev = ({isDev}: { isDev: boolean }) => {

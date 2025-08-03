@@ -1,7 +1,7 @@
 import React, {useState, useCallback, memo} from "react";
-import {motion, AnimatePresence} from "framer-motion";
+import {motion, AnimatePresence, type Variants} from "framer-motion";
 
-const dropdownVariants = {
+const dropdownVariants: Variants = {
     hidden: {opacity: 0, scale: 0.95, transformOrigin: "top left"},
     visible: (hovering: "platform" | "resources" | null) => ({
         opacity: 1,
@@ -44,7 +44,7 @@ const slideVariants = {
         x: 150,
         transition: {duration: 0.25, ease: "easeOut"}
     }
-}
+} as const
 
 const DropdownArrow = memo(({isRotated}: { isRotated: boolean }) => (
     <motion.div
@@ -53,7 +53,7 @@ const DropdownArrow = memo(({isRotated}: { isRotated: boolean }) => (
         transition={{duration: 0.2}}
     >
         <svg
-            xmlns={'http://www/w3/org/2000/svg'}
+            xmlns={'http://www.w3.org/2000/svg'}
             width={'18'}
             height={'18'}
             viewBox={'0 0 18 18'}
@@ -64,6 +64,7 @@ const DropdownArrow = memo(({isRotated}: { isRotated: boolean }) => (
                 strokeLinejoin={'round'}
                 strokeLinecap={'round'}
                 strokeWidth={'1.2'}
+                d="M5.25 7.125 9 10.875l3.75-3.75"
             ></path>
         </svg>
     </motion.div>
@@ -77,7 +78,7 @@ const NavDropdownButton = memo(
          onMouseLeave,
      }: {
         label: string;
-        active?: boolean;
+        active: boolean;
         onMouseEnter: () => void
         onMouseLeave: (e: React.MouseEvent) => void;
     }) => (
@@ -91,6 +92,12 @@ const NavDropdownButton = memo(
         </button>
     )
 )
+
+const NavButton = (({label}: {label: string}) => (
+    <button className={'group inline-flex select-none items-center justify-center gap-x-1.5 rounded-xl bg-transparent py-[8px] pl-[14px] pr-[14px] text-[15px] font-medium leading-5 -tracking-[-0.1px] transition duration-200 ease-out  hover:bg-[#f3f4f6]/50'}>
+        <span>{label}</span>
+    </button>
+))
 
 const PlatformDropdown = memo(() => (
     <div className={'flex'}>
@@ -145,7 +152,7 @@ const NavbarCenter = () => {
     const handleMouseLeave = useCallback(
         (e: React.MouseEvent) => {
             const relatedTarget = e.relatedTarget as HTMLElement;
-            if (!relatedTarget?.closese('.dropdown-container')) {
+            if (!relatedTarget?.closest('.dropdown-container')) {
                 handleDropdownHover(null)
             }
         },

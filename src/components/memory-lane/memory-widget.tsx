@@ -34,12 +34,12 @@ const MemoryWidget = () => {
         },
         {
             month: "April",
-            no_of_memories: 3,
+            no_of_memories: 1,
             memories: [imgThree]
         },
         {
             month: "May",
-            no_of_memories: 4,
+            no_of_memories: 2,
             memories: [imgTwo, imgFour]
         },
         {
@@ -79,6 +79,8 @@ const MemoryWidget = () => {
         }
     ]
 
+    const maxMonthIndex = data.length - 1;
+
     const calculateMemoryStats = (
         centeredMonthIndex: number,
         data: MonthData[]
@@ -111,15 +113,23 @@ const MemoryWidget = () => {
 
     return (
         <div
-            className={'absolute inset-0 mx-auto my-auto flex h-[320px] w-[280px] flex-col items-center justify-center overflow-hidden rounded-[60px] border-[4px] border-[#222] bg-[#040404]'}>
+            className={'absolute inset-0 mx-auto my-auto flex h-[320px] gap-y-4 w-[280px] flex-col items-center justify-center overflow-hidden rounded-[60px] border-[4px] border-[#222] bg-[#040404]'}>
             <h3 className={'absolute top-5 text-lg font-normal text-white'}>
                 Memory Lane
             </h3>
 
-            <div className={'flex absolute inset-y-0 z-50 my-auto md:hidden h-min w-full items-center justify-between'}>
+            <div className={'flex absolute inset-y-0 z-50 my-auto h-min w-full items-center justify-between'}>
                 <button
                     disabled={centeredMonthIndex === 0}
                     onClick={() => setCenteredMonthIndex(centeredMonthIndex - 1)}
+                    className={'w-5 rounded-l-sm bg-white disabled:bg-white/20'}
+                >
+                    -
+                </button>
+
+                <button
+                    disabled={centeredMonthIndex === maxMonthIndex}
+                    onClick={() => setCenteredMonthIndex(centeredMonthIndex + 1)}
                     className={'w-5 rounded-l-sm bg-white disabled:bg-white/20'}
                 >
                     +
@@ -165,7 +175,7 @@ const MemoryWidget = () => {
                 centeredMonthIndex={centeredMonthIndex}
                 data={data}
                 onSwipeLeft={() => {
-                    if (centererdMonthIndex < data.length - 1) {
+                    if (centeredMonthIndex < data.length - 1) {
                         setCenteredMonthIndex(centeredMonthIndex + 1)
                     }
                 }}

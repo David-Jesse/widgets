@@ -1,5 +1,6 @@
 import {motion} from "framer-motion";
 import cloud from '../../assets/memory-widget/cloud.png'
+import AvifImage from "../common/AvifImage";
 
 interface MemoryCardsProps {
     numMemories: number;
@@ -52,7 +53,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'h-[180px] w-[180px] translate-y-[-12px] rotate-[5deg] rounded-lg border-[8px] border-white bg-white'}
                     >
-                        <img src={memories[0] || '/placeholder.svg'} alt="" className={'h-full w-full rounded-md'}/>
+                        <AvifImage src={memories[0]} fallbackSrc="/placeholder.svg" alt="" className={'h-full w-full rounded-md'}/>
                     </motion.div>
                 </motion.div>
             );
@@ -90,7 +91,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[160px] w-[160px] translate-x-[30px] translate-y-[10px] rotate-[15deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[0] || '/placeholder.svg'} className={'h-full w-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[0]} fallbackSrc="/placeholder.svg" className={'h-full w-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -121,7 +122,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[160px] w-[160px] translate-x-[30px] translate-y-[35px] rotate-[-20deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[1] || "/placeholder.png"} className={'h-full w-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[1]} fallbackSrc="/placeholder.png" className={'h-full w-full rounded-md'} alt=""/>
                     </motion.div>
                 </motion.div>
             );
@@ -159,7 +160,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'mr-[70px] col-[1] row-[1] h-[120px] w-[120px] translate-x-[50px] translate-y-[-30px] rotate-[35deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[0] || '/placeholder.svg'} className={'h-full w-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[0]} fallbackSrc="/placeholder.svg" className={'h-full w-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -190,7 +191,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-x-[-40px] translate-y-[-30px] rotate-[-15deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[1] || '/placeholder.svg'} className={'h-full w-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[1]} fallbackSrc="/placeholder.svg" className={'h-full w-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -215,7 +216,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-y-[-25px] rotate-[10deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[2] || "/placeholder.svg"} className={'w-full h-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[2]} fallbackSrc="/placeholder.svg" className={'w-full h-full rounded-md'} alt=""/>
                     </motion.div>
                 </motion.div>
             );
@@ -253,7 +254,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-x-[40px] translate-y-[-40px] rotate-[15deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[0] || "/placeholder.svg"} className={'w-full h-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[0]} fallbackSrc="/placeholder.svg" className={'w-full h-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -284,7 +285,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-x-[-35px] translate-y-[10px] rotate-[-15deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[1] || '/placeholder.svg'} className={'w-full h-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[1]} fallbackSrc="/placeholder.svg" className={'w-full h-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -309,7 +310,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-x-[-60px] translate-y-[-35px] rotate-[5deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[2] || '/placeholder.svg'} className={'w-full h-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[2]} fallbackSrc="/placeholder.svg" className={'w-full h-full rounded-md'} alt=""/>
                     </motion.div>
 
                     <motion.div
@@ -340,7 +341,7 @@ const MemoryCards = ({numMemories, memories}: MemoryCardsProps) => {
                         }}
                         className={'col-[1] row-[1] h-[120px] w-[120px] translate-x-[45px] translate-y-[15px] rotate-[-35deg] overflow-hidden rounded-lg border-[6px] border-white bg-white'}
                     >
-                        <img src={memories[3] || '/placeholder.svg'} className={'w-full h-full rounded-md'} alt=""/>
+                        <AvifImage src={memories[3]} fallbackSrc="/placeholder.svg" className={'w-full h-full rounded-md'} alt=""/>
                     </motion.div>
                 </motion.div>
             );
