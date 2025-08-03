@@ -100,8 +100,8 @@ const MemoryWidget = () => {
         }
 
         return {
-            formattedBeforeText: formatMemoryTExt(memoriesBeforeCurrent),
-            formattedAfterText: formatMemoryText(memoriesAfterCurrent)
+            formattedBeforeText: formatMemoryText(memoriesBeforeCurrent),
+            formattedAfterText: formatMemoryText(memoriesAfterCurrent),
         }
     }
 
