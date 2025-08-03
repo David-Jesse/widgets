@@ -1,5 +1,7 @@
 
 
+import MemoryWidget from "./components/memory-lane/memory-widget.tsx";
+
 function App() {
 
   return (
